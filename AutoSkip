@@ -15,5 +15,5 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
-until game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= 0 or _G.AutoSkip == false
+until _G.AutoSkip == false
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GrandPieceTrash-GPT/Test/main/Freecam"))()
