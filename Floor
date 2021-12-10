@@ -1,0 +1,15 @@
+game:GetService("RunService").Heartbeat:Connect(function()
+    pcall(function()
+    if not game:GetService("Workspace"):FindFirstChild("lol") then
+     local a = Instance.new("Part")
+     a.Name = "ez"
+     a.Parent = game.Workspace
+     a.Anchored = true 
+a.Color = Color3.fromRGB(0, 0, 255)
+     a.Transparency = 0
+     a.Size = Vector3.new(5,0.1,5)
+     a.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y - 3.08,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
+a:Destroy()
+    end
+    end)
+end)
