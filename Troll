@@ -1,5 +1,5 @@
 repeat wait(.1)
-local Tp = game.Players.Troll
+ Tp = _G.Troll
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Tp.Character.HumanoidRootPart.CFrame * CFrame.new(0, 15, 10)
 wait(.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Tp.Character.HumanoidRootPart.CFrame * CFrame.new(5, 0, -10)
