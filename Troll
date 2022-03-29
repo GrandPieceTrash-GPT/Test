@@ -36,5 +36,17 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFi
 wait(.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(Tp).Character.HumanoidRootPart.CFrame * CFrame.new(7, 8, 3)
 wait(.1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Tp.Character.HumanoidRootPart.CFrame * CFrame.new(-10, -10, 4)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(Tp).Character.HumanoidRootPart.CFrame * CFrame.new(-10, -10, 4)
+    if not game:GetService("Workspace"):FindFirstChild("lol") then
+     local a = Instance.new("Part")
+     a.Name = "ez"
+     a.Parent = game.Workspace
+     a.Anchored = true 
+a.Color = Color3.fromRGB(0, 0, 255)
+     a.Transparency = 1
+     a.Size = Vector3.new(5,0.1,5)
+     a.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y - 3.05,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
+     wait(.5)
+a:Destroy()
+    end
 until game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= 0
