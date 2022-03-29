@@ -1,6 +1,9 @@
 repeat wait(.1)
  Tp = _G.Troll
-     if not game:GetService("Workspace"):FindFirstChild("lol") then
+game:GetService("RunService").Heartbeat:Connect(function()
+    pcall(function()
+    if not _G.Troll == "" then
+    if not game:GetService("Workspace"):FindFirstChild("lol") then
      local a = Instance.new("Part")
      a.Name = "ez"
      a.Parent = game.Workspace
@@ -12,6 +15,9 @@ a.Color = Color3.fromRGB(0, 0, 255)
      wait(.5)
 a:Destroy()
     end
+    end)
+end)
+end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(Tp).Character.HumanoidRootPart.CFrame * CFrame.new(0, 15, 10)
 wait(.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(Tp).Character.HumanoidRootPart.CFrame * CFrame.new(5, 0, -10)
